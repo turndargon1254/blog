@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: turndargon1254/blog # 你的 GitHub 仓库路径
+  branch: main # 你的主分支名字（如果是 master 就填 master）
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/posts" # 你的博客文章存放路径（根据你的项目实际路径调整）
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
